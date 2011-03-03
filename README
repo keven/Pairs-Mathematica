@@ -1,0 +1,9 @@
+Tools I use to trade pairs in Mathematica.  Run PairsExample notebook for details.  The toolkit contains
+
+ADF::Usage = "Augmented Dickey Fuller Test"
+
+Cointegrate::Usage = "Returns the p-value for ADF test on cointegration"
+
+HedgeRatio::Usage = "Use linear regression to determine the hedge ratio between two time data sets"
+
+Pearson::Usage = "Returns the Pearson correlation for the pair"

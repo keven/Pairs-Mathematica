@@ -1,0 +1,388 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15289,        379]
+NotebookOptionsPosition[     14240,        344]
+NotebookOutlinePosition[     14747,        361]
+CellTagsIndexPosition[     14704,        358]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"ToFileName", "[", 
+    RowBox[{"Extract", "[", 
+     RowBox[{
+      RowBox[{"\"\<FileName\>\"", "/.", 
+       RowBox[{"NotebookInformation", "[", 
+        RowBox[{"EvaluationNotebook", "[", "]"}], "]"}]}], ",", 
+      RowBox[{"{", "1", "}"}], ",", "FrontEnd`FileName"}], "]"}], "]"}], 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Import", "[", "\"\<Pairs.m\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.508120604438986*^9, 3.508120605173876*^9}, 
+   3.508121243485444*^9}],
+
+Cell["\<\
+This is an example for testing GLD and GDX pair cointegration from Jan. 1, \
+2010 to Dec. 31, 2010.\
+\>", "Text",
+ CellChangeTimes->{{3.508120667535427*^9, 3.508120689298547*^9}, 
+   3.508120827598097*^9, {3.508121216021983*^9, 3.5081212603955727`*^9}}],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"gld", " ", "=", " ", 
+    RowBox[{"FinancialData", "[", 
+     RowBox[{"\"\<GLD\>\"", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"2010", ",", " ", "1", ",", " ", "1"}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"2010", ",", " ", "12", ",", " ", "31"}], "}"}]}], "}"}]}], 
+     "]"}]}], ";"}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"gdx", "=", 
+    RowBox[{"FinancialData", "[", 
+     RowBox[{"\"\<GDX\>\"", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"2010", ",", " ", "1", ",", " ", "1"}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"2010", ",", " ", "12", ",", " ", "31"}], "}"}]}], "}"}]}], 
+     "]"}]}], ";"}], TraditionalForm]}], "Input",
+ CellChangeTimes->{{3.508120696948668*^9, 3.5081207396855173`*^9}}],
+
+Cell["\<\
+Let' s plot the time - series on a chart.  Just because it' s so easy to do \
+so in Mathematica!\
+\>", "Text",
+ CellChangeTimes->{{3.508121073303279*^9, 3.508121103597979*^9}, {
+  3.5081212030101347`*^9, 3.50812120384619*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"DateListPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"gld", ",", " ", "gdx"}], "}"}], ",", " ", 
+    RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}], TraditionalForm]], "Input",\
+
+ CellChangeTimes->{{3.5081208622571774`*^9, 3.508120906684873*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  GraphicsBox[{{}, {}, 
+    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1: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
+
+      "]]}, 
+    {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
+1:eJxVlgls02UYxjuubd3Yuq07OJ0iN0KNJAo6bRkIDhgdtwa1TA4FjEVBYBxW
+DAiCrCiJcXKU25AIRa6JmpQh95EZUQ4Fug22tR1bu3tjh1+f930T2oSQX77/
+//ue93mf7/3v6eyPJs/toNFoWtS/4P/q51p612OanN97ne/oWKNi/y7F166q
+XwU49bLiohz94bGfjwuyuVbx2boBs3Kzwbbe93j9DFi3Q7H25l5rmhdsvKB4
+nzVNe7Mj2BoQTgc7etzn/Z4BF465z+dvxvn2SsW5BeqBI2BXittjqlePF5x4
+HXpHKV6pji86PQZ6P1RMlYGdPsUvBH+fgN2JRR5TRZYqeCFYZ1ScBsFg44Ii
+9iMwGnq3Kc77Xv1GgDUJxbzfFDxvSCvm898CW+YXc319wPatimcFC2hJh/5f
+FS8OHqjDunlkCftnwv62OSUh7zu3KB4Y3CCC9OeXsJ7bpL+khPX8BS7c9MBj
+Umpy9JnwR3NScVBeznCwwf2Az5sNtmgfiv/k5wbF63zKoIfk57GHrL8n6b0r
+3EJ6w0t5/22k9/lS7t9V8tNZyn4Pxv7WO6XsVx7Y0anMY5oX/HVBfwuHlrGe
+PaT/zTLufyzl4WYZ9+dPrLvCykOe9w8uZz1TwanTZX0t2GxTHHw9aybY3VbO
++2WBdQM9HtO4oEFlYOMUD+ttJv2rPbz/DdJ/0CP3g/zt55V8kb9mL+drNdie
+45X64Y9rn5frmwT2X/dKvsG2iT65P3jfuczHebhIedjt437HkP6rPj4/ivxc
+UsE8HqzZVcH3wwg2XKrg9yvBlpoK1lNFfvd6xP0cgvuZuv0Rn1+OdfN5xcHb
+oz0Ftvkfsd/FYGf3Sj7PAXaPrpQ8gK1nKyXvYMejSs5zAulPrmI/ppH+UVWc
+z3Wkf1GV3FeaD94q6R/NM71f+kfz7DW/zBOaZx/4Jc80z77183mJb8DP+ADn
+8zzNs1cCPN8O0TybF+A8LKF5Zg+wn9dpnp2W9+eBLSOqmUvB9vcUPxUsaGcG
+9H9dzf5uAPtPVXM9/cGpxdVc/1yw01LDfhdAr/urGvZjK+k/UcP15pL++zWc
+x7fJ/8hafn4x+buhls//kfz9uVbmCen/r1buF+nvUsf99IFdhjru51ny83Yd
+n/c72Nmxnv0bRHqfq5d5Td+PmfUyj8nPf+rle0R+ahp4fhrwvmZwg+QX64Zp
+Dax/ANYtnzXI/Ab7W2X9IuV5QCPrWYB18+RG9vsg2LaqUeonvw80yvwFG/s2
+SV7A1klNMj/xvmNFE+uPxnrh3ib5PpL+603SP6zbJzRLvikPnzZzvYWk39Es
++QKnXpHn91Oe65rlvpGfOx/zeRnU/4uPZX5Rfqsfcx7Xk989WzgPcdjf8EOL
+3Cfq/7kWmddYt1e1cP111P9urSHff396K9+/7pSHAuE8mg8VrfJ9wbo7qS1k
+HulMbdIf0r+wjf2wUh48baxvLFijb5e/Tyi/r7bLfaL59n4773+Y5ts37Txv
+amg+xGm8lL+7NN9eVgw/NaR/ruIn/HbmKqb9SP8vip+o3/pSmPfJ/DqyFdM8
+h3+Fm8N4fwvpP6X4iXlkKFKMfh0nf9/t4KX7PIzysFEx8riC8nC8A+9fQnm+
+pxh+OSnPER299P1bTvPhS8XkH9h4VDHNS9L/r2L6+4Ly3LkT72egPA/rxH6t
+BlsOK6a/LyjPtzpxfQ7Kc4fOzEaab0M683l5NN9mdGb/DoHd7YoxX66AdYO6
+sN6DdP+mKkYe+9H9W6MY36MZYE2rYvq+gw39w1mfaTz0ZoWz/l5g+0rFmMdr
+wK794ez/cLD52QjuzyqwLTOCzz8Adi6P4PfbwO49EXz+UbDuWujzjvGRIfsV
+Lo3k/vWZAP2OSPZbBzZcjuT6L5D+Wnm/J9b9H2u5/u+wnrpDy+9bsW6+oJV8
+g20BLeenG9jZI8pL93kp2JgXxXq+AFv/iOL8zwU7KqPk/YnQnxLN9ZWS/vTo
+kPftZ6IlH2CXL5r91UOvP7Er93sT6Td2ZT116J95gWLc71Hkb3lXvg9HyN+E
+GH7+BNiYFsN+9Qdb58dw/a3k/9aYkHoNuli+r4vAlpGxrH8v6Z8Tuu7aEiv5
+RP3+/Fi+X7fAthd1Mh8y4e9sHevfg3X3Jp2cj3XdSZ3UAza6Zf1v8vedOC/P
+M7BmY5zsR/qPxcl9Jf1347j/ZjxvD4+XPIBT1wsXgs3OeM7TdtJ/Jz5U79AE
+yRvY+lMC+5kGdtxMYH82k94wPe/vJ71D9LxfNuozTNdznvpOgp839FI/2N+m
+l3mE51MHJkr+wOYpibzfWrBtdaLMG/KzJVHySH72S+L97oCt5iSeNxlgR04S
+71dM+vclybzGuqVPsuQVbJ+YzPc7Duxalsz9z6c87Jb1ANiZkcL6z5GfS1Ik
+76R3V4rMN9J7KUX6RXprUtj/3zKN/wMlKxGf
+      "]]}},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   AxesOrigin->NCache[{3471552000, 40.}, {3.471552*^9, 40.}],
+   Frame->True,
+   FrameTicks->{{Automatic, Automatic}, {{{
+        NCache[3471292800, 3.4712928*^9], 
+        FormBox["\"Jan\"", TraditionalForm]}, {
+        NCache[3479068800, 3.4790688*^9], 
+        FormBox["\"Apr\"", TraditionalForm]}, {
+        NCache[3486931200, 3.4869312*^9], 
+        FormBox["\"Jul\"", TraditionalForm]}, {
+        NCache[3494880000, 3.49488*^9], 
+        FormBox["\"Oct\"", TraditionalForm]}, {
+        NCache[3502828800, 3.5028288*^9], 
+        FormBox["\"Jan\"", TraditionalForm]}, {
+        NCache[3473971200, 3.4739712*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3476390400, 3.4763904*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3481660800, 3.4816608*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3484339200, 3.4843392*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3489609600, 3.4896096*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3492288000, 3.492288*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3497558400, 3.4975584*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3500150400, 3.5001504*^9], 
+        FormBox["\"\"", TraditionalForm]}}, {{
+        NCache[3471292800, 3.4712928*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3479068800, 3.4790688*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3486931200, 3.4869312*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3494880000, 3.49488*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3502828800, 3.5028288*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3473971200, 3.4739712*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3476390400, 3.4763904*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3481660800, 3.4816608*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3484339200, 3.4843392*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3489609600, 3.4896096*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3492288000, 3.492288*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3497558400, 3.4975584*^9], 
+        FormBox["\"\"", TraditionalForm]}, {
+        NCache[3500150400, 3.5001504*^9], 
+        FormBox["\"\"", TraditionalForm]}}}},
+   GridLines->NCache[{{{3471292800, 
+        GrayLevel[0.8]}, {3479068800, 
+        GrayLevel[0.8]}, {3486931200, 
+        GrayLevel[0.8]}, {3494880000, 
+        GrayLevel[0.8]}, {3502828800, 
+        GrayLevel[0.8]}}, None}, {{{3.4712928*^9, 
+        GrayLevel[0.8]}, {3.4790688*^9, 
+        GrayLevel[0.8]}, {3.4869312*^9, 
+        GrayLevel[0.8]}, {3.49488*^9, 
+        GrayLevel[0.8]}, {3.5028288*^9, 
+        GrayLevel[0.8]}}, None}],
+   ImageSize->{603., Automatic},
+   PlotRange->{{3.471552*^9, 3.5027424*^9}, {39.97, 139.11}},
+   PlotRangeClipping->True,
+   PlotRangePadding->{
+     Scaled[0.02], 
+     Scaled[0.02]},
+   Ticks->None], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.508120867984329*^9, 3.5081209071393003`*^9}, 
+   3.5081212100891647`*^9, {3.508121276519527*^9, 3.508121286378048*^9}, 
+   3.50812132884394*^9}]
+}, Open  ]],
+
+Cell["Next let' s calculate correlations.", "Text",
+ CellChangeTimes->{{3.508121308078656*^9, 3.508121325775235*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Pearson", "[", 
+   RowBox[{
+    RowBox[{"gld", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", " ", "2"}], "]"}], "]"}], ",", " ", 
+    RowBox[{"gdx", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", " ", "2"}], "]"}], "]"}]}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{{3.508121035952774*^9, 3.508121046348119*^9}}],
+
+Cell[BoxData[
+ FormBox["0.980366983443348`", TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.508121127631543*^9, 3.508121210286365*^9, {3.5081212767642307`*^9, 
+   3.508121286557756*^9}, 3.508121329125519*^9}]
+}, Open  ]],
+
+Cell["\<\
+So GLD/GDX pair is highly correlated.  Let' s see if they are cointegrated.\
+\>", "Text",
+ CellChangeTimes->{{3.50812113008741*^9, 3.508121153421906*^9}, 
+   3.508121186703148*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Cointegrate", "[", 
+   RowBox[{
+    RowBox[{"gld", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", " ", "2"}], "]"}], "]"}], ",", " ", 
+    RowBox[{"gdx", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", " ", "2"}], "]"}], "]"}]}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{{3.508120774939829*^9, 3.508120787824547*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{"InterpolatingFunction", "::", "dmval"}], "MessageName"], 
+   RowBox[{
+   ":", " "}], "\<\"Input value \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({\\(-4.338573575568235`\\)}\\)\\)\
+\[NoBreak] lies outside the range of data in the interpolating function. \
+Extrapolation will be used. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/InterpolatingFunction/dmval\\\", \
+ButtonNote -> \\\"InterpolatingFunction::dmval\\\"]\\)\"\>"}], 
+  TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{
+  3.508120788690751*^9, 3.508120834914155*^9, 3.50812121050655*^9, {
+   3.508121276933695*^9, 3.508121286708598*^9}, 3.508121329275919*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{"ADF", "::", "toosmall"}], "MessageName"], 
+   RowBox[{":", " "}], "\<\"p-value smaller than printed value\"\>"}], 
+  TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{
+  3.508120788690751*^9, 3.508120834914155*^9, 3.50812121050655*^9, {
+   3.508121276933695*^9, 3.508121286708598*^9}, 3.508121329365926*^9}],
+
+Cell[BoxData[
+ FormBox["0.01`", TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.508120790942175*^9, 3.508120835260352*^9, 3.5081212107536716`*^9, {
+   3.5081212771093616`*^9, 3.508121286871502*^9}, 3.5081213294674463`*^9}]
+}, Open  ]],
+
+Cell["\<\
+This show that GLD/GDX pair has 99 % probability for cointegration\
+\>", "Text",
+ CellChangeTimes->{{3.5081211557557507`*^9, 3.50812120091807*^9}}]
+},
+WindowSize->{1274, 956},
+WindowMargins->{{Automatic, 533}, {Automatic, 36}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit) (November 24, 2010)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "kevenlin", 
+   "Library", "Mathematica", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "myDefault.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 548, 13, 48, "Input"],
+Cell[1108, 35, 263, 5, 31, "Text"],
+Cell[1374, 42, 909, 25, 55, "Input"],
+Cell[2286, 69, 236, 5, 31, "Text"],
+Cell[CellGroupData[{
+Cell[2547, 78, 292, 8, 32, "Input"],
+Cell[2842, 88, 8495, 166, 407, "Output"]
+}, Open  ]],
+Cell[11352, 257, 117, 1, 31, "Text"],
+Cell[CellGroupData[{
+Cell[11494, 262, 371, 11, 32, "Input"],
+Cell[11868, 275, 214, 4, 27, "Output"]
+}, Open  ]],
+Cell[12097, 282, 190, 4, 31, "Text"],
+Cell[CellGroupData[{
+Cell[12312, 290, 375, 11, 32, "Input"],
+Cell[12690, 303, 767, 16, 23, "Message"],
+Cell[13460, 321, 374, 9, 21, "Message"],
+Cell[13837, 332, 227, 4, 27, "Output"]
+}, Open  ]],
+Cell[14079, 339, 157, 3, 31, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)
